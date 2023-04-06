@@ -24,9 +24,9 @@ struct DBRecord  //JZ - defines a new data structure called DBRecord.
 
 int main()
 {
-  string fileN = "sampData.txt";            // JZ - variable to determine when sort is done
+  string fileN = "sampData.txt";      // JZ - designate input filename
   int x = 0, records = 3;             // JZ - counter variables
-DBRecord empRecords[records];       // JZ - creates database empRecords with rec elements
+  DBRecord empRecords[records];       // JZ - creates database empRecords with rec elements
 
   
   ifstream myFile;    //JZ - associates file input stream with myFile
@@ -56,10 +56,13 @@ DBRecord empRecords[records];       // JZ - creates database empRecords with rec
   }
   myFile.close();
   
+  
+  /* JZ - Here we write the array of our data structure to a file*/
+  
   fileN = "sampWrite";  //JZ - assign a name to the output file
 
-  ofstream fileW;
-  fileW.open(fileN);
+  ofstream fileW;       //JZ - designate output data stream to fileW
+  fileW.open(fileN);    //JZ - assign stream fileW to the file name
   
   for (x = 0; x < records; x++)
     {   
